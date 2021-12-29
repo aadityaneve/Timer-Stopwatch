@@ -80,13 +80,13 @@ function App() {
         }
 
         if (toggleWatch) {
-            if (second < 0) {
+            if (second < 1) {
                 setMinute((prevState) => prevState - 1);
                 setSecond(60);
-            } else if (minute < 0) {
+            } else if (minute < 1) {
                 setHour((prevState) => prevState - 1);
                 setMinute(60);
-            } else if (hour < 0) {
+            } else if (hour < 1) {
                 setHour(0);
             }
         } else {

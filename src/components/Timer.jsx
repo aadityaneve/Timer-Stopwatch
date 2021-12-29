@@ -47,7 +47,7 @@ const Timer = ({
                                 setHour(24);
                             } else if (
                                 e.target.value < 0 ||
-                                e.target.value === /^[0]+$/
+                                e.target.value === /[^0]+$/
                             ) {
                                 setHour(0);
                             }
@@ -76,7 +76,7 @@ const Timer = ({
                                 setMinute(60);
                             } else if (
                                 e.target.value < 0 ||
-                                e.target.value === /^[0]+$/
+                                e.target.value === /[^0]+$/
                             ) {
                                 setMinute(0);
                             }
@@ -105,7 +105,7 @@ const Timer = ({
                                 setSecond(60);
                             } else if (
                                 e.target.value < 0 ||
-                                e.target.value == /^[0]+$/
+                                e.target.value === /[^0]+$/
                             ) {
                                 setSecond(0);
                             }
