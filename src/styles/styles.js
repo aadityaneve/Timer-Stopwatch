@@ -6,6 +6,7 @@ const useStyles = makeStyles({
         border: '2px solid coral',
         padding: 2,
         backgroundColor: 'rgb(32,33,36)',
+        maxWidth: '50',
     },
     timer: {
         color: 'rgb(232,234,237)',
@@ -32,7 +33,7 @@ const useStyles = makeStyles({
         justifyContent: 'space-between',
     },
     leftButtons: {
-        flexBasis: '50%',
+        flexBasis: '40%',
         display: 'flex',
         justifyContent: 'space-around',
     },
@@ -43,9 +44,14 @@ const useStyles = makeStyles({
         width: '100%',
     },
     rightButtons: {
-        flexBasis: '50%',
+        flexBasis: '40%',
         display: 'flex',
         justifyContent: 'flex-end',
+    },
+    selectTime: {
+        display: 'flex',
+        justifyContent: 'space-around',
+        flexBasis: '70%',
     },
 });
 
