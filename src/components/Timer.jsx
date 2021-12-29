@@ -15,7 +15,15 @@ import {
     FormHelperText,
 } from '@mui/material';
 
-const Timer = ({ hour, minute, second, setHour, setMinute, setSecond }) => {
+const Timer = ({
+    hour,
+    minute,
+    second,
+    setHour,
+    setMinute,
+    setSecond,
+    startTimer,
+}) => {
     const classes = useStyles();
 
     return (
@@ -23,6 +31,7 @@ const Timer = ({ hour, minute, second, setHour, setMinute, setSecond }) => {
             <Box style={{ width: '101%' }}>
                 <FormControl sx={{ m: 2, width: '17ch' }} variant='outlined'>
                     <OutlinedInput
+                        disabled={startTimer}
                         type='number'
                         style={{
                             color: 'white',
@@ -51,6 +60,7 @@ const Timer = ({ hour, minute, second, setHour, setMinute, setSecond }) => {
 
                 <FormControl sx={{ m: 2, width: '17ch' }} variant='outlined'>
                     <OutlinedInput
+                        disabled={startTimer}
                         type='number'
                         style={{
                             color: 'white',
@@ -79,6 +89,7 @@ const Timer = ({ hour, minute, second, setHour, setMinute, setSecond }) => {
 
                 <FormControl sx={{ m: 2, width: '17ch' }} variant='outlined'>
                     <OutlinedInput
+                        disabled={startTimer}
                         type='number'
                         style={{
                             color: 'white',

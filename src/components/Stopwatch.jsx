@@ -18,6 +18,7 @@ const Stopwatch = ({
     setMinute,
     setSecond,
     setMiliSecond,
+    startTimer,
 }) => {
     const classes = useStyles();
 
@@ -26,6 +27,7 @@ const Stopwatch = ({
             <Box style={{ width: '101%' }}>
                 <FormControl sx={{ m: 2, width: '17ch' }} variant='outlined'>
                     <OutlinedInput
+                        disabled={startTimer}
                         type='number'
                         style={{
                             color: 'white',
@@ -54,6 +56,7 @@ const Stopwatch = ({
 
                 <FormControl sx={{ m: 2, width: '17ch' }} variant='outlined'>
                     <OutlinedInput
+                        disabled={startTimer}
                         type='number'
                         style={{
                             color: 'white',
@@ -82,6 +85,7 @@ const Stopwatch = ({
 
                 <FormControl sx={{ m: 2, width: '17ch' }} variant='outlined'>
                     <OutlinedInput
+                        disabled={startTimer}
                         type='number'
                         style={{
                             color: 'white',

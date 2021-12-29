@@ -141,6 +141,7 @@ function App() {
                             setHour={setHour}
                             setMinute={setMinute}
                             setSecond={setSecond}
+                            startTimer={startTimer}
                         />
                     ) : (
                         <Stopwatch
@@ -151,6 +152,7 @@ function App() {
                             setHour={setHour}
                             setMinute={setMinute}
                             setSecond={setSecond}
+                            startTimer={startTimer}
                         />
                     )}
                 </Box>
