@@ -127,7 +127,7 @@ const Stopwatch = ({
                             setMiliSecond(e.target.value);
                         }}
                         endAdornment={
-                            <InputAdornment position='end'>ms</InputAdornment>
+                            <InputAdornment position='end'>MS</InputAdornment>
                         }
                     />
                 </FormControl>

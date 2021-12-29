@@ -29,9 +29,13 @@ function App() {
 
     const setTimer = () => {
         if (toggleWatch) {
-            setHour(hour);
-            setMinute(minute);
-            setSecond(second);
+            if (second === 0 && minute === 0 && hour === 0) {
+                setMinute(5);
+            } else {
+                setSecond(second);
+                setMinute(minute);
+                setHour(hour);
+            }
 
             setStartTimer((prevState) => (prevState = true));
 
@@ -77,17 +81,22 @@ function App() {
         if (second === 0 && minute === 0 && hour === 0 && miliSecond === 0) {
             setStartTimer((prevState) => (prevState = false));
             clearInterval(timerInterval);
+            timerInterval = undefined;
         }
 
         if (toggleWatch) {
-            if (second < 1) {
-                setMinute((prevState) => prevState - 1);
-                setSecond(60);
-            } else if (minute < 1) {
-                setHour((prevState) => prevState - 1);
-                setMinute(60);
-            } else if (hour < 1) {
-                setHour(0);
+            if (second === 0 && minute === 0 && hour === 0) {
+                setMinute(5);
+            } else {
+                if (second < 0) {
+                    setMinute((prevState) => prevState - 1);
+                    setSecond(59);
+                } else if (minute < 0) {
+                    setHour((prevState) => prevState - 1);
+                    setMinute(59);
+                } else if (hour < 0) {
+                    setHour(0);
+                }
             }
         } else {
             if (miliSecond >= 1000) {
@@ -115,7 +124,7 @@ function App() {
                 setMinute(0);
             } */
         }
-    }, [miliSecond]);
+    }, [toggleWatch ? second : miliSecond]);
 
     const handleToggleWatch = (bool) => {
         setToggleWatch(bool);
