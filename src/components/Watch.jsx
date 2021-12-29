@@ -47,8 +47,9 @@ function App() {
             setStartTimer((prevState) => (prevState = true));
 
             timerInterval = setInterval(() => {
-                setMiliSecond((prevState) => prevState + 1);
-            }, 1);
+                setMiliSecond((prevState) => prevState + 33);
+                console.log(miliSecond);
+            }, 30.3);
         }
     };
 
@@ -83,29 +84,39 @@ function App() {
             if (second < 0) {
                 setMinute((prevState) => prevState - 1);
                 setSecond(60);
-            }
-            if (minute < 0) {
+            } else if (minute < 0) {
                 setHour((prevState) => prevState - 1);
                 setMinute(60);
-            }
-            if (hour < 0) {
+            } else if (hour < 0) {
                 setHour(0);
             }
         } else {
-            if (miliSecond >= 100) {
+            if (miliSecond >= 1000) {
+                setMiliSecond((prevState) => (prevState = 0));
+                setSecond((prevState) => prevState + 1);
+
+                if (second >= 60) {
+                    setSecond((prevState) => (prevState = 0));
+                    setMinute((prevState) => prevState + 1);
+                    if (minute >= 60) {
+                        setMinute((prevState) => (prevState = 0));
+                        setHour((prevState) => prevState + 1);
+                    }
+                }
+            }
+
+            /* if (miliSecond > 99) {
                 setMiliSecond(0);
                 setSecond((prevState) => prevState + 1);
-            }
-            if (second > 60) {
+            } else if (second > 59) {
                 setSecond(0);
                 setMinute((prevState) => prevState + 1);
-            }
-            if (minute > 60) {
+            } else if (minute > 59) {
                 setHour((prevState) => prevState + 1);
                 setMinute(0);
-            }
+            } */
         }
-    }, [toggleWatch ? second : miliSecond]);
+    }, [miliSecond]);
 
     const handleToggleWatch = (bool) => {
         setToggleWatch(bool);
