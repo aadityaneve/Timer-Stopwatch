@@ -90,16 +90,18 @@ function App() {
     return (
         <div className='App'>
             <Container maxWidth='sm' className={classes.root}>
-                <Box>
+                <Box className={classes.startStopButtons}>
                     <Button
+                        className={classes.timerButton}
                         onClick={() => handleToggleWatch(true)}
-                        variant='contained'
+                        variant='outlined'
                     >
                         <HourglassEmptySharpIcon /> TIMER
                     </Button>
                     <Button
+                        className={classes.stopwatchButton}
                         onClick={() => handleToggleWatch(false)}
-                        variant='contained'
+                        variant='outlined'
                     >
                         <TimerSharpIcon /> STOPWATCH
                     </Button>
@@ -116,28 +118,36 @@ function App() {
                         />
                     )}
                 </Box>
-                <Box>
-                    <Button
-                        onClick={() => (!timerInterval ? setTimer() : null)}
-                        variant='contained'
-                        color='success'
-                    >
-                        START
-                    </Button>
-                    <Button
-                        onClick={() => (timerInterval ? resetTimer() : null)}
-                        variant='contained'
-                        color='secondary'
-                    >
-                        RESET
-                    </Button>
+                <Box className={classes.allButtons}>
+                    <Box className={classes.leftButtons}>
+                        <Button
+                            className={classes.startButton}
+                            onClick={() => (!timerInterval ? setTimer() : null)}
+                            variant='outlined'
+                            color='success'
+                        >
+                            START
+                        </Button>
+                        <Button
+                            className={classes.resetButton}
+                            onClick={() =>
+                                timerInterval ? resetTimer() : null
+                            }
+                            variant='outlined'
+                            color='error'
+                        >
+                            RESET
+                        </Button>
+                    </Box>
 
-                    <Button variant='contained' color='secondary'>
-                        <VolumeUpSharpIcon />
-                    </Button>
-                    <Button variant='contained' color='secondary'>
-                        <FullscreenSharpIcon />
-                    </Button>
+                    <Box className={classes.rightButtons}>
+                        <Button variant='outlined' color='secondary'>
+                            <VolumeUpSharpIcon />
+                        </Button>
+                        <Button variant='outlined' color='secondary'>
+                            <FullscreenSharpIcon />
+                        </Button>
+                    </Box>
                 </Box>
             </Container>
         </div>

@@ -9,8 +9,14 @@ const Stopwatch = ({ hour, minute, second, miliSecond }) => {
     return (
         <Container>
             <Box>
-                <h1 className={classes.timerColor}>
-                    {hour}h {minute}m {second}s {miliSecond}ms
+                <h1 className={classes.timer}>
+                    {hour}
+                    <span className={classes.timerLetter}>h</span> {" "}
+                    {minute}
+                    <span className={classes.timerLetter}>m</span> {" "}
+                    {second}
+                    <span className={classes.timerLetter}>s</span> {" "}
+                    {miliSecond}
                 </h1>
             </Box>
         </Container>
