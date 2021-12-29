@@ -92,7 +92,7 @@ function App() {
                 setHour(0);
             }
         } else {
-            if (miliSecond > 99) {
+            if (miliSecond >= 100) {
                 setMiliSecond(0);
                 setSecond((prevState) => prevState + 1);
             }
