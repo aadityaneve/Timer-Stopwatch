@@ -1,6 +1,6 @@
 # Timer StopWatch
 
-# Timer-Stopwatch: https://aadityaneve.github.io/Timer-Stopwatch
+### Timer-Stopwatch: https://aadityaneve.github.io/Timer-Stopwatch
 
 ## Parts Completed
 
