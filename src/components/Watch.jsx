@@ -48,7 +48,6 @@ function App() {
 
             timerInterval = setInterval(() => {
                 setMiliSecond((prevState) => prevState + 33);
-                console.log(miliSecond);
             }, 30.3);
         }
     };
