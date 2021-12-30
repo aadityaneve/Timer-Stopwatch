@@ -37,14 +37,12 @@ const Stopwatch = ({
                         id='outlined-adornment-weight'
                         value={hour}
                         onChange={(e) => {
-                            if (e.target.value <= 24 && e.target.value >= 0) {
-                                setHour(e.target.value);
-                            } else if (e.target.value > 24) {
+                            let num = Number(e.target.value);
+                            if (num <= 24 && num >= 0) {
+                                setHour(num);
+                            } else if (num > 24) {
                                 setHour(24);
-                            } else if (
-                                e.target.value < 0 ||
-                                e.target.value === /^[0]+$/
-                            ) {
+                            } else if (num < 0 || num === /^[0]+$/) {
                                 setHour(0);
                             }
                         }}
@@ -66,14 +64,12 @@ const Stopwatch = ({
                         id='outlined-adornment-weight'
                         value={minute}
                         onChange={(e) => {
-                            if (e.target.value <= 60 && e.target.value >= 0) {
-                                setMinute(e.target.value);
-                            } else if (e.target.value > 60) {
+                            let num = Number(e.target.value);
+                            if (num <= 60 && num >= 0) {
+                                setMinute(num);
+                            } else if (num > 60) {
                                 setMinute(60);
-                            } else if (
-                                e.target.value < 0 ||
-                                e.target.value === /^[0]+$/
-                            ) {
+                            } else if (num < 0 || num === /^[0]+$/) {
                                 setMinute(0);
                             }
                         }}
@@ -95,14 +91,12 @@ const Stopwatch = ({
                         id='outlined-adornment-weight'
                         value={second}
                         onChange={(e) => {
-                            if (e.target.value <= 60 && e.target.value >= 0) {
-                                setSecond(e.target.value);
-                            } else if (e.target.value > 60) {
+                            let num = Number(e.target.value);
+                            if (num <= 60 && num >= 0) {
+                                setSecond(num);
+                            } else if (num > 60) {
                                 setSecond(60);
-                            } else if (
-                                e.target.value < 0 ||
-                                e.target.value == /^[0]+$/
-                            ) {
+                            } else if (num < 0 || num == /^[0]+$/) {
                                 setSecond(0);
                             }
                         }}
@@ -124,7 +118,8 @@ const Stopwatch = ({
                         id='outlined-adornment-weight'
                         value={miliSecond}
                         onChange={(e) => {
-                            setMiliSecond(e.target.value);
+                            let num = Number(e.target.value);
+                            setMiliSecond(num);
                         }}
                         endAdornment={
                             <InputAdornment position='end'>MS</InputAdornment>
