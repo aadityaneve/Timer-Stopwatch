@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Timer-Stopwatch/static/js/main.14673a6f.js",
+    "main.js": "/Timer-Stopwatch/static/js/main.c2300cff.js",
     "index.html": "/Timer-Stopwatch/index.html",
-    "main.14673a6f.js.map": "/Timer-Stopwatch/static/js/main.14673a6f.js.map"
+    "main.c2300cff.js.map": "/Timer-Stopwatch/static/js/main.c2300cff.js.map"
   },
   "entrypoints": [
-    "static/js/main.14673a6f.js"
+    "static/js/main.c2300cff.js"
   ]
 }
