@@ -2,10 +2,14 @@ import * as React from 'react';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
+    app: {
+        backgroundColor: '#2D4263',
+        padding: '33vh 0vw',
+    },
     root: {
         border: '2px solid coral',
         padding: 2,
-        backgroundColor: 'rgb(32,33,36)',
+        backgroundColor: '#ECDBBA',
         maxWidth: '50',
     },
     timer: {
